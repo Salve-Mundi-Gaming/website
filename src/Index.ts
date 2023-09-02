@@ -14,9 +14,12 @@ import { seedDatabase } from './misc/Seeder';
 import { GameServerModel } from './models/GameServerModel';
 import { renderServerList } from './pages/ServerList';
 import cache from 'ts-cache-mongoose';
+import { configDotenv } from 'dotenv';
+
+// Load ENV parameters
+configDotenv();
 
 const app = express();
-const config = require('../data/config.json');
 
 // Serve static content
 app.use('/', express.static('./www'))
@@ -52,8 +55,8 @@ async function main() {
             engine: 'memory',
         });
 
-        log(`Connecting to ${config.db.url}...`);
-        await mongoose.connect(`${config.db.url}/${config.db.name}`);
+        log(`Connecting to ${process.env.DB_URL}...`);
+        await mongoose.connect(`${process.env.DB_URL}/${process.env.DB_NAME}`);
         log(`Connected to database.`);
     } catch(e) {
         log(`ERROR: Failed to connect to database server!`);
@@ -68,10 +71,10 @@ async function main() {
         await seedDatabase();
 
     // Start HTTPS Server
-    app.listen(config.http.port, async() => {
+    app.listen(process.env.HTTP_PORT, async() => {
         // Open new log
         await logOpen();
-        await log(`Server started on port ${config.http.port}!`);
+        await log(`Server started on port ${process.env.HTTP_PORT}!`);
     });
 }
 

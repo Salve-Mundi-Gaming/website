@@ -12,7 +12,7 @@ You can find more info on our association [here](https://salvemundi.nl).
 
 1. Download NodeJS and MongoDB and install them
 
-2. Clone this repo
+2. Copy `.env.example` to `.env` and change any necessary values.
 
 3. Run `npm install`
 

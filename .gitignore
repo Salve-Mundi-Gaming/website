@@ -1,0 +1,8 @@
+# Node stuff
+/dist
+/node_modules
+
+# Other
+/temp
+/.env
+/server.log

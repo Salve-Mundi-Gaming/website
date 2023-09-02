@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head 
+        include ../components/header.pug
+        link(rel="stylesheet" href="/css/servers.css")
+        title Multiplayer Servers - Salve Mundi Gaming Club 
+
+    body(class="servers-page")
+        header
+            //- Add navigation bar
+            include ../components/navbar.pug
+
+        main             
+            include ../mixins/server-item.pug
+
+            //- Official servers pane
+            div(class="server-pane")
+                div(class="caption") Officiele Servers
+                div(class="description") Deze servers zijn gehost door SaMu en/of club staff
+                div(class="list")
+                    +server-item("Salve Mundi MC", "mc.salvemundi.nl", "1.20", "minecraft", "De officiele SaMu Minecraft server!")
+                    +server-item("Gmod", "gmod.fontys-intro.org:27017", "13", "gmod", "Gmod server? Sample text")
+
+            //- User servers
+            div(class="server-pane")
+                div(class="caption") User Servers 
+                div(class="description") Servers die opgezet zijn door andere studenten
+                div(class="list")
+                    i Niet geimplementeerd.
+
+        footer 
+            include ../components/footer.pug

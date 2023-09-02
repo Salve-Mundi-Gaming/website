@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    head 
+        include ../components/header.pug
+        title Salve Mundi Gaming Club 
+
+    body 
+        header
+            //- Add navigation bar
+            include ../components/navbar.pug
+
+        main 
+            //- Include mixins
+            include ../mixins/gridset-item.pug
+
+            div(class="hero" style="background-image: url(/img/backgrounds/minecraft0.png)")
+                div(class="content")
+                    div(class="title") Wij brengen mensen samen met videogames
+                    div(class="subtitle") Vind en maak nieuwe gaming buddies in onze club. 
+                    div(class="buttons")
+                        button(onclick="alert('sike')") Zie Events
+
+            //- Gridset for activites we do
+            div(class="gridset")
+                div(class="title") Wat wij doen (in het kort)
+                div(class="grid")
+                    //- Events item
+                    +gridset_item("Events", "Neem deel aan game events", "events")
+                    +gridset_item("Speel Samen", "Game samen met clubleden en maak nieuwe vrienden.", "social")
+                    +gridset_item("Tournaments", "Kom in de leaderboards (en win prijzen!) in wedstrijden met anderen.", "stadium")
+
+            //- Gridset for games we play
+            div(class="gridset")
+                div(class="title") Games die wij spelen
+                div(class="grid")
+                    +gridset_item("Minecraft", "Join de officiele SaMu Minecraft server!", "minecraft")
+                    +gridset_item("Factorio", "Bouw een megafabriek met ons", "factorio")
+                    +gridset_item("Garry's Mod", "Populair physics sandbox spel.", "gmod")
+
+        footer 
+            include ../components/footer.pug

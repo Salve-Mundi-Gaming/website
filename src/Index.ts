@@ -12,7 +12,7 @@ import { GameModel } from './models/GameModel';
 import { existsSync } from 'fs';
 import { seedDatabase } from './misc/Seeder';
 import { GameServerModel } from './models/GameServerModel';
-import { renderServerList } from './routes/ServerList';
+import { renderServerList } from './pages/ServerList';
 import cache from 'ts-cache-mongoose';
 
 const app = express();

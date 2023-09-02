@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jest",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/Index.ts",
     "dev": "npx nodemon src/Index.ts",
     "build": "tsc",
-    "serve": "node dist/index.js"
+    "serve": "node dist/Index.js"
   },
   "author": "",
   "license": "ISC",

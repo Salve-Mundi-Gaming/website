@@ -4,9 +4,13 @@
 
 import express from 'express';
 import { log, logOpen } from './misc/Utilities';
-import { MongoClient } from 'mongodb';
 import { renderFile } from 'pug';
 import { AppContext } from './app/AppContext';
+import mongoose, { Mongoose } from 'mongoose';
+import { Game } from './types/Game';
+import { GameModel } from './models/GameModel';
+import { existsSync } from 'fs';
+import { seedDatabase } from './misc/Seeder';
 
 const app = express();
 const config = require('../data/config.json');
@@ -31,10 +35,7 @@ app.get('/about', (req, res) => res.end(renderFile("./ui/pages/about.pug")));
  * Carries the current app context.
  */
 const appContext = {
-    mongo: new MongoClient(config.db.url),
-
-    /** @type {import('mongodb').Db} */
-    db: null
+    mongoose
 } as AppContext;
 
 /**
@@ -43,11 +44,19 @@ const appContext = {
 async function main() {
     try {
         log(`Connecting to ${config.db.url}...`);
-        await appContext.mongo.connect();
+        await mongoose.connect(`${config.db.url}/${config.db.name}`);
         log(`Connected to database.`);
     } catch(e) {
         log(`ERROR: Failed to connect to database server!`);
     }
+
+    // Init models
+    for(let m of [GameModel])
+        await m.init();
+
+    // Do seeding if needed
+    if(!existsSync(".seed_successful"))
+        await seedDatabase();
 
     // Start HTTPS Server
     app.listen(config.http.port, async() => {

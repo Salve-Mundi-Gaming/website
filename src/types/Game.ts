@@ -1,9 +1,9 @@
-import { IdentDBObject } from "../misc/Manager";
+import { IdentObject } from "./IdentObject";
 
 /**
  * Represents a game.
  */
-export interface Game extends IdentDBObject {
+export interface Game extends IdentObject {
     /** The name of the game. */
     name: string;
 

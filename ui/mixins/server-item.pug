@@ -1,15 +1,22 @@
 //- Server item mixin
-mixin server-item(name, address, version, icon, description)
+mixin server-item(server)
     div(class="item")
         div(class="left")
-            div(class="icon " + icon)
+            div(class="icon " + server.icon)
         div(class="right")
-            div(class="name")= name 
-            div(class="description")= description
+            div(class="name")= server.name 
+            div(class="description")= server.description
             div(class="owner")
                 span Gehoost door: 
                 span Hosting User
-            div(class="version")= "Game Versie: " + version 
+            div(class="version")= "Game Versie: " + server.version 
             div(class="address")
-                div(class="type") IP
-                div(class="value")= address
+                if server.isPremium
+                    div(class="type") IP
+                    div(class="value")
+                        | (gebruiker niet ingelogd, 
+                        a(href="/login") login hier
+                        | )
+                else 
+                    div(class="type") IP
+                    div(class="value")= server.address

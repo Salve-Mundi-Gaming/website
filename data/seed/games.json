@@ -1,5 +1,5 @@
 [
-    { "name": "Minecraft", "shortname": "minecraft", "icon": "games/minecraft.png", "description": "A game about placing blocks.", "website": "https://minecraft.net" },
-    { "name": "Garry's Mod", "shortname": "gmod", "icon": "games/gmod.png", "description": "Sandbox game.", "website": "https://gmod.facepunch.com/" },
-    { "name": "Factorio", "shortname": "factorio", "icon": "games/factorio.png", "description": "Factorio game.", "website": "https://store.steampowered.com/app/427520/Factorio/" }
+    { "name": "Minecraft", "shortname": "minecraft", "icon": "minecraft", "description": "A game about placing blocks.", "website": "https://minecraft.net" },
+    { "name": "Garry's Mod", "shortname": "gmod", "icon": "gmod", "description": "Sandbox game.", "website": "https://gmod.facepunch.com/" },
+    { "name": "Factorio", "shortname": "factorio", "icon": "factorio", "description": "Factorio game.", "website": "https://store.steampowered.com/app/427520/Factorio/" }
 ]

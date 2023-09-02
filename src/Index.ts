@@ -11,6 +11,9 @@ import { Game } from './types/Game';
 import { GameModel } from './models/GameModel';
 import { existsSync } from 'fs';
 import { seedDatabase } from './misc/Seeder';
+import { GameServerModel } from './models/GameServerModel';
+import { renderServerList } from './routes/ServerList';
+import cache from 'ts-cache-mongoose';
 
 const app = express();
 const config = require('../data/config.json');
@@ -21,7 +24,7 @@ app.use('/', express.static('./www'))
 // Page routes
 app.get('/', (req, res) => res.end(renderFile("./ui/pages/home.pug")));
 app.get('/stats', (req, res) => res.end(renderFile("./ui/pages/stats.pug")));
-app.get('/servers', (req, res) => res.end(renderFile("./ui/pages/servers.pug")));
+app.get('/servers', renderServerList);
 app.get('/events', (req, res) => res.end(renderFile("./ui/pages/events.pug")));
 app.get('/records', (req, res) => res.end(renderFile("./ui/pages/records.pug")));
 app.get('/about', (req, res) => res.end(renderFile("./ui/pages/about.pug")));
@@ -43,6 +46,12 @@ const appContext = {
  */
 async function main() {
     try {
+        // Configure cache
+        cache.init(mongoose, {
+            defaultTTL: '60 seconds',
+            engine: 'memory',
+        });
+
         log(`Connecting to ${config.db.url}...`);
         await mongoose.connect(`${config.db.url}/${config.db.name}`);
         log(`Connected to database.`);
@@ -51,9 +60,9 @@ async function main() {
     }
 
     // Init models
-    for(let m of [GameModel])
+    for(let m of [GameModel, GameServerModel])
         await m.init();
-
+    
     // Do seeding if needed
     if(!existsSync(".seed_successful"))
         await seedDatabase();

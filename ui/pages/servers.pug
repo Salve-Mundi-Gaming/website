@@ -18,15 +18,22 @@ html(lang="en")
                 div(class="caption") Officiele Servers
                 div(class="description") Deze servers zijn gehost door SaMu en/of club staff
                 div(class="list")
-                    +server-item("Salve Mundi MC", "mc.salvemundi.nl", "1.20", "minecraft", "De officiele SaMu Minecraft server!")
-                    +server-item("Gmod", "gmod.fontys-intro.org:27017", "13", "gmod", "Gmod server? Sample text")
+                    if premiumServers.length                        
+                        each server in premiumServers
+                            +server-item(server)
+                    else
+                        i Geen servers.
 
             //- User servers
             div(class="server-pane")
                 div(class="caption") User Servers 
                 div(class="description") Servers die opgezet zijn door andere studenten
                 div(class="list")
-                    i Niet geimplementeerd.
+                    if freeServers.length                        
+                        each server in freeServers
+                            +server-item(server)
+                    else
+                        i Geen servers.
 
         footer 
             include ../components/footer.pug

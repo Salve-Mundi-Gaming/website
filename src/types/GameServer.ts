@@ -22,4 +22,10 @@ export interface GameServer extends IdentObject {
 
     /** The server address */
     address: string;
+
+    /** Whether this is a premium server (requires Samu subscription) */
+    isPremium: boolean;
+
+    /** Server icon. */
+    icon: string;
 }

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jest",
-    "start": "ts-node src/Index.ts",
-    "dev": "npx nodemon src/Index.ts",
-    "build": "tsc",
-    "serve": "node dist/Index.js",
+    "start": "npm run sass && ts-node src/Index.ts",
+    "dev": "npm run sass && npx nodemon src/Index.ts",
+    "build": "tsc && npm run sass",
+    "serve": "npm run sass && node dist/Index.js",
     "sass": "sass sass/index.scss www/css/index.css"
   },
   "author": "",

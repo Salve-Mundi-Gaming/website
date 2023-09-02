@@ -1,0 +1,13 @@
+// Icon registry
+
+.icon {
+    // System icons
+    &.stadium { background-image: url(/img/icons/stadium.svg); }
+    &.social { background-image: url(/img/icons/smiley.svg); }
+    &.events { background-image: url(/img/icons/event.svg); }
+
+    // Game icons
+    &.icon.minecraft { background-image: url(/img/games/minecraft.png); }
+    &.icon.factorio { background-image: url(/img/games/factorio.png); }
+    &.icon.gmod { background-image: url(/img/games/gmod.png); }
+}

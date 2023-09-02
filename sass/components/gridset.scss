@@ -1,0 +1,50 @@
+.gridset {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+
+    &:nth-child(2n+2) {
+        background-color: rgb(56, 56, 56);
+    }
+
+    // Grid section title
+    >.title {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    // The grid container
+    >.grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin-left: 10rem;
+        margin-right: 10rem;
+
+        // Grid tile
+        >.item {
+            text-align: center;
+
+            // Grid item icon
+            >.icon {
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1em;
+                margin-top: 1em;
+                height: 72px;
+                width: 72px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            // Grid item title
+            >.title {
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    
+}

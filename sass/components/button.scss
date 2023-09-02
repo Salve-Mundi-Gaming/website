@@ -1,0 +1,15 @@
+// Site button
+button {
+    appearance: none;
+    border: none;
+    background-color: white;
+    color: rgb(32, 32, 32);
+    padding: 10px 15px;
+    cursor: pointer;
+
+    // Hover state
+    &:hover {
+        background-color: rgb(32, 32, 32);
+        color: white;
+    }
+}

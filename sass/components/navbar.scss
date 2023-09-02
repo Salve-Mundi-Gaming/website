@@ -1,0 +1,44 @@
+// Navigation bar component
+
+.nav-bar {
+    display: flex;
+    padding: 20px;
+    background-color: rgb(32, 32, 32);
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    >.logo {
+        height: 36px;
+        width: 210px;
+        background-image: url(/img/samu.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+
+        >.text {
+            margin: auto;
+            margin-right: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+
+    >.buttons {
+        flex: 1;
+        text-align: right;
+
+        >a {
+            padding: 10px;
+            display: inline-block;
+            margin-left: 10px;
+
+            &:hover {
+                color: rgb(32, 32, 32);
+                background-color: white;
+            }
+        }
+    }
+}

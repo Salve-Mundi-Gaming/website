@@ -1,0 +1,84 @@
+/* Server Pane styles */
+.server-pane {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    // Caption
+    >.caption {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+    }
+
+    // Pane description
+    >.description {
+        margin-bottom: 1.5rem;
+    }
+}
+
+// Pane list
+.server-pane>.list {
+    // Item
+    >.item {
+        background-color: rgb(38, 38, 38);
+        border-radius: 8px;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        line-height: 1.35;
+        margin-bottom: 2em;
+
+        // Left panel
+        >.left {
+            // Icon box
+            >.icon {
+                height: 72px;
+                width: 72px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+        
+        // Right panel
+        >.right {
+            flex: 1;
+            margin-left: 1em;
+
+            // Server name
+            >.name {
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+
+            // Server description text
+            >.description {
+                margin-bottom: 0.5rem;
+            }
+
+            // Address box
+            >.address {
+                padding: 5px;
+                box-sizing: border-box;
+                margin-top: 0.5rem;
+                display: inline-block;
+                background-color: rgb(32, 32, 32);
+
+                >.type {
+                    font-weight: bold;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 0.5rem;
+                }
+
+                >.value {
+                    font-family: monospace;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }        
+    }
+}

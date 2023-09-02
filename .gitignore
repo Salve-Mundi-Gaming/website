@@ -7,3 +7,4 @@
 /.env
 /server.log
 /.seed_successful
+/www/css/index.css*

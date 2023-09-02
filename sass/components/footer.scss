@@ -1,0 +1,62 @@
+/* Site Footer */
+footer {
+    background-color: rgb(32, 32, 32);
+}
+
+// Site footer component
+.site-footer {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 1.5em;
+    padding-top: 3em;
+
+    // Content container
+    >.content {
+        display: flex;
+        margin-bottom: 3em;
+
+        // Left logo panel
+        >.left>.logo {
+            // Image box
+            >.image {
+                margin-left: auto;
+                margin-right: auto;
+                height: 100px;
+                width: 100px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url(/img/samu.svg);
+            }
+
+            // logo subtext
+            >.title {
+                font-weight: bold;
+                font-size: 18px;
+            }
+        }
+
+        // Right pane
+        >.right {
+            flex: 1;
+            margin-left: 2em;
+
+            // Mark
+            >.mark {
+                line-height: 1.35;
+
+                a {
+                    color: white;
+                }                
+            }
+        }
+    }
+
+    // Copyright footer
+    >.copyright {
+        border-top: 1px solid rgb(64, 64, 64);
+        padding: 0.5em;
+        padding-top: 1.75em;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}

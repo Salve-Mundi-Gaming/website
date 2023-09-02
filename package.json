@@ -8,7 +8,8 @@
     "start": "ts-node src/Index.ts",
     "dev": "npx nodemon src/Index.ts",
     "build": "tsc",
-    "serve": "node dist/Index.js"
+    "serve": "node dist/Index.js",
+    "sass": "sass sass/index.scss www/css/index.css"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "mongodb": "^6.0.0",
     "mongoose": "^7.5.0",
     "pug": "^3.0.2",
+    "sass": "^1.66.1",
     "ts-cache-mongoose": "^1.1.2",
     "tslib": "^2.6.2"
   },

@@ -1,0 +1,27 @@
+// Page hero styles
+
+.hero {
+    display: flex;
+    height: 50vh;
+    min-height: 300px;
+    background-position: center;
+
+    // Content pane
+    >.content {
+        margin: auto;
+        text-align: center;
+
+        // Pane title
+        >.title {
+            font-weight: bold;
+            font-size: 48px;
+            margin-bottom: 2rem;
+        }
+
+        // Subtext
+        >.subtitle {
+            margin-bottom: 2rem;
+            font-size: 22px;
+        }
+    }
+}
